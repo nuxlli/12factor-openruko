@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>The Twelve-Factor Apps and Openruko</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Éverton Ribeiro">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -36,311 +37,495 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<h1>12factor.net gh/openruko</h1>
+					<p><a href="https://github.com/nuxlli">Éverton Ribeiro</a></p>
 				</section>
-
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<h1>PaaS</h1>
+					<h3>Tão difícil como parece ou tão fácil como deve ser?</h3>
 				</section>
-
-				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>The Twelve-Factor Apps</h2>
+						<ul>
+							<li>Metodologia para construção de software-as-a-service</li>
+							<li>Define uma série de diretrizes e vocabulário padrão</li>
+							<li>Desenvolvedores / Engenheiros / Infra-estrutura</li>
+						</ul>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+						<h2>The Twelve-Factor Apps</h2>
+						<p>Write by Adam Wiggins - CTO e Co-Founder do Heroku</p>
+						<p>Disponível para contribuição no github:&nbsp;<a href="https://github.com/adamwiggins/12factor">https://github.com/adamwiggins/12factor</a></p>
+					</section>
+				</section>
+				
+				<!-- I. Codebase -->
+				<section>
+					<section>
+						<h2>12factor - I. Codebase</h2>
+						<h6>Um codebase com controle de versão, vários deploys</h6>
+						<p class="bad">Múltiplos codebase não é uma app, é um sistema distribuído.</p>
+						<p class="good">Cada componente de um sistema distribuído pode, individualmente, cumprir twelve-factor.</p>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
+						<h2>12factor - I. Codebase</h2>
+						<h6>Um codebase com controle de versão, vários deploys</h6>
+						<p class="bad">Multiplas apps compartilhando o mesmo codebase violam o princípio twelve-factor.</p>
+						<p class="good">Separe seu código em bibliotecas.</p>
 					</section>
 					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<h2>12factor - I. Codebase</h2>
+						<h6>Um codebase com controle de versão, vários deploys</h6>
+						<p><em>Deploy:</em>&nbsp;instância de uma aplicação.</p>
+						<p>Mesmo codebase ao longo dos deploys, mas diferentes versões em cada instância.</p>
+					</section>
+					<section>
+						<h2>12factor - I. Codebase</h2>
+						<h6>Um codebase com controle de versão, vários deploys</h6>
+						<p class="good">Diferentes desenvolvedores e instâncias pode rodar diferentes versões do codebase.</p>
+						<p><img src="http://www.12factor.net/images/codebase-deploys.png"></p>
 					</section>
 				</section>
-
+				
+				<!-- II. Dependencies -->
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview. Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>rvl.io</h2>
-					<p>
-						If you don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-							<section data-markdown>
-							  ## Markdown support
-
-							  For those of you who like that sort of thing.
-							  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-							</section>
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> -
-						<a href="?#/themes">Default</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section>
-					<section data-state="alert">
-						<h2>Global State</h2>
-						<p>
-							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-							will be added as a class to the document element when the slide is open. This lets you
-							apply broader style changes, like switching the background.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section>
+						<h2>12factor - II. Dependencies</h2>
+						<h6>Declarar e isolar dependências explicitamente</h6>
+						<ul>
+							<li><strong>Ruby:</strong>&nbsp;"Gem Bundler + Gemfile" - bundle exec</li>
+							<li><strong>Python:</strong>&nbsp;Pip - Virtualenv</li>
+							<li><strong>C:</strong>&nbsp;Autoconf - static linking</li>
+						</ul>
 					</section>
-					<section data-state="blackout">
-						<h2>"blackout"</h2>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					
+					<section>
+						<h2>12factor - II. Dependencies</h2>
+						<h6>Declarar e isolar dependências explicitamente</h6>
+						<p class="bad">Declaração e isolamento de dependências devem ser utilizas de forma conjunta, apenas o uso de uma não satisfaz twelve-factor.</p>
 					</section>
-					<section data-state="soothe">
-						<h2>"soothe"</h2>
-						<a href="#" class="image navigate-next">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(-90deg);">
-						</a>
+					
+					<section>
+						<h2>12factor - II. Dependencies</h2>
+						<h6>Declarar e isolar dependências explicitamente</h6>
+						<p class="bad">Nunca depender da existência implícita de todas as ferramentas do sistema</p>
+						<p>Mesmo que um recurso esteja sempre presente na maior parte dos sistemas, não existe garantia de que ele sempre vai estar presente ou que sera compatível: <em>vendorize</em></p>
 					</section>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) ) {
-        node.className += ' roll';
-      }
-    };
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
+					
+					<section>
+						<h2>12factor - II. Dependencies</h2>
+						<h6>Declarar e isolar dependências explicitamente</h6>
+						<p class="good"><strong>Positive side effect</strong>: tornar fácil a entrada de novos desenvolvedores</p>
+					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+						<h2>12factor - III. Config</h2>
+						<h6>Armazenar configurações no environment</h6>
+						<p class="bad">Configurações nunca devem estar armazenadas na forma de constantes no código. Isso viola o twelve-factor</p>
+						<p>Elas podem variar entre os environments (staging, production e developer) de uma mesma aplicação, o código não vai variar com a mesma frequência.</p>
 					</section>
+					
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
+						<h2>12factor - III. Config</h2>
+						<h6>Armazenar configurações no environment</h6>
+						<p>Melhor forma de saber se esta seguindo essa premissa é se o código da aplicação poderia ser tornar publico a qualquer momento, sem comprometer a segurança.</p>
+					</section>
+					
+					<section>
+						<h2>12factor - III. Config</h2>
+						<h6>Armazenar configurações no environment</h6>
+						<p>Configurações internas da aplicação não são consideradas "config", "config/routes.rb" ou código xml de ORM são exemplos de configuração interna.</p>
+					</section>
+					
+					<section>
+						<h2>12factor - III. Config</h2>
+						<h6>Armazenar configurações no environment</h6>
+						<p class="good">Twelve-factor app usa variáveis de ambiente para armazenar configurações:</p>
+						<ul>
+							<li>Fácil de alterar entre ambientes;</li>
+							<li>A poucas chances de ir parar no repositório de código;</li>
+							<li>Não é preciso nenhum sistema adiciona de configuração;</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>12factor - III. Config</h2>
+						<h6>Armazenar configurações no environment</h6>
+						<p class="good">Agnóstico de linguagem e de sistema operacional</p>
+					</section>
+					
+					<section>
+						<h2>12factor - III. Config</h2>
+						<h6>Armazenar configurações no environment</h6>
+						<p><strong>Modelos:</strong> Grupos nomeados (também conhecidos como "environments") vs. Variáveis de ambiente</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>12factor - IV. Backing Services</h2>
+						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
+						<p>Qualquer <em>backing service</em> que seja consumido via rede e seja parte da operação normal do sistema, exemplos:</p>
+						<ul>
+							<li><strong>Datastores:&nbsp;</strong>MySQL ou MongoDB</li>
+							<li><strong>Messaging/Queueing:&nbsp;</strong>RabbitMQ ou Beanstalkd</li>
+							<li><strong>SMTP:&nbsp;</strong>Postfix</li>
+							<li><strong>Caching:&nbsp;</strong>Memcached ou Redis</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>12factor - IV. Backing Services</h2>
+						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
+						<p>Mas não somente serviços que em geral são resposabilidade de administrador de sistema, temos também serviços de terceiros:</p>
+						<ul>
+							<li><strong>SMTP services:&nbsp;</strong>Postmark ou Sendgrid</li>
+							<li><strong>Metrics-gathering services:&nbsp;</strong>New Relic ou Loggly</li>
+							<li><strong>Binary asset services:&nbsp;</strong>Amazon S3 ou Azure Store</li>
+							<li><strong>API's:&nbsp;</strong>Twitter, Google Maps ou Last.fm</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>12factor - IV. Backing Services</h2>
+						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
+						<p class="good">Não é feita distinção entre serviço locais ou de terceiros</p>
+						<p>Uma vez que o <em>resource</em> seja anexado a aplicação, seu acesso se da por URL ou localizador/credencias adicionados ao <em>config</em>.</p>
+					</section>
+					
+					<section>
+						<h2>12factor - IV. Backing Services</h2>
+						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
+						<p class="good">Facilita o processo de troca entre versões do <em>resource</em>, sem a necessidade de alteração ou deploy de um novo código</p>
+					</section>
+					
+					<section>
+						<h2>12factor - IV. Backing Services</h2>
+						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
+						<p>Cada <em>backing service</em> é um <em>resource</em> diferente. Por exemplo um MySQL é um resource, dois MySQL (usado para redundancia) é qualificado com dois <em>resurces</em> diferentes;</p>
+						<img src="http://www.12factor.net/images/attached-resources.png" />
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>V. Build, release, run</h2>
+						<h6>Separar os estágios de build e execução</h6>
+						<p>O <em>codebase</em> é transformado em deploy em três estágios:</p>
+					</section>
+					
+					<section>
+						<h2>V. Build, release, run</h2>
+						<h6>Separar os estágios de build e execução</h6>
+						<p><strong>Build stage:&nbsp;</strong>É um processo de transformação, que transformo código do respositório em uma versão executável, nesta fase é feita a busca pela versão especificada do código, vendorização das dependencias e compilação de assets.</p>
+					</section>
+					
+					<section>
+						<h2>V. Build, release, run</h2>
+						<h6>Separar os estágios de build e execução</h6>
+						<p><strong>Release stage:&nbsp;</strong>Nesta fase o produto da fase build é empacotado juntamente com o as informações do <em>config</em>, um pacote pronto para execução é criado</p>
+					</section>
+					
+					<section>
+						<h2>V. Build, release, run</h2>
+						<h6>Separar os estágios de build e execução</h6>
+						<p><strong>Run stage:&nbsp;</strong>também conhecido com "runtime", nesta fase o pacote gerado no release é executado no ambiente de execução.</p>
+					</section>
+					
+					<section>
+						<h2>V. Build, release, run</h2>
+						<h6>Separar os estágios de build e execução</h6>
+						<p><img src="http://www.12factor.net/images/release.png" /></p>
+					</section>
+
+					<section>
+						<h2>V. Build, release, run</h2>
+						<h6>Separar os estágios de build e execução</h6>
+						<p>Twelve-factor definir uma separação estrita entre as fases: build, release e run. Por exemplo: não é possível alterar o código da aplicação na fase de <em>runtime</em>.</p>
+					</section>
+										
+					<section>
+						<h2>V. Build, release, run</h2>
+						<h6>Separar os estágios de build e execução</h6>
+						<ul>
+							<li>O processo de build é disparado pela ferramenta de deploy, que deve ser capaz de dentre outras coisas executar processo de rollback e atualização do código</li>
+							<li>Cada <em>release</em> deve ter um ID único, e uma vez criada não pode ser modificada;</li>
+							<li>A fase de build tende a ser a fase mais complexa, em geral é onde as falhas acontecem e são reportadas ao desenvolvedor imediatamente</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>12factor - VI. Processes</h2>
+						<h6>Executar a aplicação como um ou mais <em>processes</em> sem estado</h6>
+						<p>No caso mais simples o código é um script autônomo, como em:</p>
+						<pre>
+							<code class="shell">$ python my_script.py</code>
+						</pre>
+					</section>
+					
+					<section>
+						<h2>12factor - VI. Processes</h2>
+						<h6>Executar a aplicação como um ou mais <em>processes</em> sem estado</h6>
+						<p>Na outra extremidade temos aplicações em produção que podem rodar diversos <em>processes</em> ao mesmo tempo, como em:</p>
+						<pre>
+							<code class="shell">
+# Procfile
+web: rack -s thin
+worker: resque work --queues=high,low
+							</code>
+						</pre>
+					</section>
+					
+					<section>
+						<h2>12factor - VI. Processes</h2>
+						<h6>Executar a aplicação como um ou mais <em>processes</em> sem estado</h6>
+						<p class="bad">Indiferente de ser simples ou complexo os <em>processes</em> não devem manter estado e nem compartilhar nada por meio de persistência em disco ou memória</p>
+					</section>
+					
+					<section>
+						<h2>12factor - VI. Processes</h2>
+						<h6>Executar a aplicação como um ou mais <em>processes</em> sem estado</h6>
+						<p class="good">Memória e disco devem ser consideradas regiões de <em>brief</em> ou <em>single-transaction</em>, qualquer outra informação que necessite persistencia deve utilizar <em>resources</em>.</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>12factor - VII. Port binding</h2>
+						<h6>Exportar serviços via <em>port binding</em></h6>
+						<p>Nenhum webserver é injetado no environment de execução, as aplicações devem ser auto-contidas, elas devem export o serviço http dando binding em uma porta e aguardar por requests nesta porta.</p>
+					</section>
+					
+					<section>
+						<h2>12factor - VII. Port binding</h2>
+						<h6>Exportar serviços via <em>port binding</em></h6>
+						<p>Não apenas serviços http devem ser espostos dessa forma, um serviço com ejabberd ou redis devem fazer o mesmo</p>
+					</section>
+					
+					<section>
+						<h2>12factor - VII. Port binding</h2>
+						<h6>Exportar serviços via <em>port binding</em></h6>
+						<p>Observer que um serviço assim exposto pode ser tornar um <em>backing service</em> para outras aplicações</p>
 					</section>
 				</section>
 
 				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
+					<section>
+						<h2>12factor - VIII. Concurrency</h2>
+						<h6>Escale através do modelo de processos</h6>
+						<img src="http://www.12factor.net/images/process-types.png">
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>12factor - IX. Disposability</h2>
+						<h6>Maximizar a robustez com <em>fast startup</em> e <em>graceful shutdown</em></h6>
+						<p>No Twelve-factor o <em>processes</em> é descartável, isso quer dizer que ele pode ser parado e startado a qualquer momento.</p>
+						<p>Isso permite:</p>
+						<ul>
+							<li>Facilidade ao escalar a aplicação;</li>
+							<li>Rapidez no processo de deploy do código e mudança das configurações;</li>
+							<li>E um robusto processo de deploy em produção;</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>12factor - IX. Disposability</h2>
+						<h6>Maximizar a robustez com <em>fast startup</em> e <em>graceful shutdown</em></h6>
+						<p>Ter <em>fast startup</em> agiliza o processo de execução da aplicação, tornando rápidamente disponível, e torna mais fácil o processo de mudar uma aplicação de máquina física.</p>
+					</section>
+
+					<section>
+						<h2>12factor - IX. Disposability</h2>
+						<h6>Maximizar a robustez com <em>fast startup</em> e <em>graceful shutdown</em></h6>
+						<p>O processo de <em>graceful shutdown</em> deve ocorrer normalmente quando o processo recebe um SIGTERM. Para processos http por exemplo, ele deve parar de esperar por nova requisições, finalizar as requisições atuais, fechar todos os streams em andamento, e finalizar o processo</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
+					<section>
+						<h2>12factor - X. Dev/prod parity</h2>
+						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
+						<p class="bad">Esta deveria ser uma regra para qualquer processo de desenvolvimento</p>
+					</section>
+					
+					<section>
+						<h2>12factor - X. Dev/prod parity</h2>
+						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
+						<p>Evite os gaps:</p>
+						<ul>
+							<li><strong>Gap de time:&nbsp;</strong>Desenvolver código por dias, semanas ou até mesmo por meses só depois para por em produção;</li>
+							<li><strong>Gap pessoal:&nbsp;</strong>Desenvolvedor coda, ops enginners fazem deploy;</li>
+							<li><strong>Gap de ferramentas:&nbsp;</strong>Desenvolve localmente com Nginx, SQLite sobre OS X, e coloca em produção sobre: Apache, MySQL e Linux;</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>12factor - X. Dev/prod parity</h2>
+						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
+						<p>Twelve-factor apps são desenhas para facilitar o processo de <em>continuous deployment</em> o que ajuda a tornar o gap entre desenvolvimento e produção muito menor.</p>
+						<p>Como os gaps são evitados:</p>
+						<ul>
+							<li><strong>Gap de time:&nbsp;</strong>Após desenvolver um código o dev pode fazer o deploy depois de algumas horas ou mesmo minutos;</li>
+							<li><strong>Gap pessoal:&nbsp;</strong>Quem desenvolve faz deploy, e pode observar como o código se comportou em produção;</li>
+							<li><strong>Gap de ferramentas:&nbsp;</strong>mantendo o environment de produção e desenvolvimento tão semelhante possível;</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>12factor - X. Dev/prod parity</h2>
+						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
+						<p class="bad">Divergências entre os <em>baking services</em> talvez sejam um dos principais pivos de problemas, e um dos mais complicados de manter.</p>
+						<p class="good">Porem o desenvolvedor twelve-factor resiste ao máximo usar diferentes <em>backing service</em> entre os environments</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>12factor - XI. Logs</h2>
+						<h6>Trate logs como stream</h6>
+						<p>Logs são uma parte muito importe de uma aplicação, porém é comum o redirecionamento e amazenamento dos mesmos em arquivos;</p>
+						<p class="bad">Isso não deve acontecer, assim como no ambiente de desenvolvimento logs devem gerar um stream na saída padrão, e o Desenvolvedor twelve-factor não se preocupa em encaminhar ou armazenar esses fluxos;</p>
+					</section>
+					
+					<section>
+						<h2>12factor - XI. Logs</h2>
+						<h6>Trate logs como stream</h6>
+						<p class="good">Mas como logs são importes, o sistema de execução deve se preocupar em capturar e encaminhar o log para algum serviço que o desenvolvedor possa consultar depois.</p>
+						<p>Esse processo deve impactor o menos possível no tempo de processamento e comunicação da máquina onde a aplicação esta sendo executada</p>
+					</section>
+					
+					<section>
+						<h2>12factor - XI. Logs</h2>
+						<h6>Trate logs como stream</h6>
+						<p><em>Backing services</em> para analise dos logs e geração de metricas podem ser adicionados para completar o processo;</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
+					<section>
+						<h2>12factor - XII. Admin process</h2>
+						<h6>Tarefas de administração e manutenção devem ser <em>on-off processes</em></h6>
+						<p>Além dos processo normais de execução das aplicações, muitas vezes o desenvolvedor pode precisar executar tarefas de manutenção e administração, como:</p>
+						<ul>
+							<li>Rodar migrações de banco de dados;</li>
+							<li>Acessar um console para execução de códigos aleatórios;</li>
+							<li>Rodar algum script de correção de dados;</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>12factor - XII. Admin process</h2>
+						<h6>Tarefas de administração e manutenção devem ser <em>on-off processes</em></h6>
+						<p>Para estes casos o desenvolvedor deve poder executar estas tarefas nas mesmas condições dos environments de execução da aplicação, incluindo rodar no mesmo <em>release</em> com as mesmas <em>configs</em></p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Leave feedback on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
+					<h2>Openruko</h2>
+					<h6><a href="https://github.com/openruko">https://github.com/openruko</a></h6>
+					<p>Thomas Buckley-Houston &lt;<a href="mailto:tom@tombh.co.uk">tom@tombh.co.uk</a>&gt;<p>
+					<p><a href="https://github.com/tombh">github.com/tombh</a> - &nbsp;<a href="http://tombh.co.uk">http://tombh.co.uk</a></p>
+					<br/>
+					<p>Romain Philibert &lt;<a href="mailto:romain.philibert@gmail.com">romain.philibert@gmail.com</a>&gt;</p>
+					<p><a href="https://github.com/Filirom1">github.com/Filirom1</a> - <a href="http://philibert.romain.free.fr">http://philibert.romain.free.fr</a></p>
+					<br/>
+					<p>Matt Freeman &lt;<a href="mailto:matt@nonuby.com">matt@nonuby.com</a>&gt;</p>
+					<p><a href="https://github.com/nonuby">github.com/nonuby</a> -&nbsp;<a href="http://blog.nonuby.com">http://blog.nonuby.com</a></p>
 				</section>
-
+				
 				<section>
-					<h2>It's free</h2>
-					<p>
-						reveal.js and <a href="http://www.rvl.io">rvl.io</a> are entirely free but if you'd like to support the projects you can donate below.
-						Donations will go towards hosting and domain costs.
-					</p>
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-						<input type="hidden" name="cmd" value="_donations">
-						<input type="hidden" name="business" value="hakim.elhattab@gmail.com">
-						<input type="hidden" name="lc" value="US">
-						<input type="hidden" name="item_name" value="reveal.js / rvl.io">
-						<input type="hidden" name="no_note" value="0">
-						<input type="hidden" name="currency_code" value="USD">
-						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					</form>
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<img src="/openruko.png">
+					</section>
+				
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<h6>Api Server - <a href="https://github.com/openruko/apiserver">openruko/apiserver</a></h6>
+						<p>Componente central do Openruko, feito em node.js + postgresql, seu trabalho é divido em duas partes:</p>
+						<ul>
+							<li><strong>API Pública (heroku compatível): </strong>Responsável por toda interação com o desenvolvedor, que em geral é feita por meio da ferramenta de CLI.</li>
+							<li><strong>API Privada: </strong>Por meio da qual todos os outros componentes internos obtem informações sobre as fases de: build, release e run.</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<h6>Gitmouth - <a href="https://github.com/openruko/gitmouth">openruko/gitmouth</a></h6>
+						<p>Desenvolvido em python com auxilio da biblioteca twisted, é responsável pelo balanceamento de carga das chamadas ssh/git.</p>
+						<p>Alternativas em desenvolvimento:</p>
+						<ul>
+							<li><a href="https://github.com/azukiapp/plowman">azukiapp/plowman</a></li>
+							<li><a href="https://github.com/Filirom1/gogit">Filirom1/gogit</a></li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<h6>Dynohost - <a href="https://github.com/openruko/dynohost">openruko/dynohost</a></h6>
+						<p>Serviço desenvolvido em node.js + LXC, seu trabalho se divide em quatro partes:</p>
+						<ul>
+							<li><strong>Container constructor: </strong>Através de scripts bash constroi os arquivos de configuração e ponto de montagem / do container</li>
+							<li><strong>LXC Wraper: </strong>Uma vez com arquivos de configuração e o ponto de montagem, gerenciar a execução dos containers LXC;</li>
+							<li><strong>Deploy: </strong>Antes de executar um container baixa o slug a ser executado e monta este na pasta /app, e por fim starta o container para execução do rukorun</li>
+							<li><strong>Dyno gestor: </strong>Constroi um canal de comunicação com o container (dyno) por meio de sockets;</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<h6>Rukorun - <a href="https://github.com/openruko/rukorun">openruko/rukorun</a></h6>
+						<p>Feito em node.js, esse é um simples script que faz a ponte do container com o mundo, através de sockts estabelecidos pelo Dynohost</p>
+						<p>É atráves desse script que aplicação e inicializada pelo dynohost, e mesmo coisas como console podem ser estabelecidas com o container</p>
+					</section>
+					
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<h6>Httprouting - <a href="https://github.com/openruko/httprouting">openruko/httprouting</a></h6>
+						<p>Balanceador de carga para chamadas http, desenvolvido em node.js é o responsável por tratar todas as chamadas http vindas com destino as aplicações em execução no openruko.</p>
+						<p>Atualmente suporta websockets, e se conecta direto ao postgresql para obter dados de resolução e dynos.</p>
+						<p>Alternativas:</p>
+						<ul>
+							<li><a href="https://github.com/dotcloud/hipache">dotcloud/hipache</a></li>
+							<li><a href="https://github.com/samalba/hipache-nginx">samalba/hipache-nginx</a></li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<h6>Logplex - <a href="https://github.com/openruko/logplex">openruko/logplex</a></h6>
+						<p>Syslog distribuído, este serviço desenvolvido em node.js é uma simplificação compatível do serviço de mesmo nome do heroku.</p>
+					</section>
+					
+					<section>
+						<h2>Openruko - Arquitetura</h2>
+						<h6>Mais componentes a serem desenvolvidos</h6>
+						<ul>
+							<li>Monitor e escalonador</li>
+							<li>Addons</li>
+							<li>Billing</li>
+							<li>Portal</li>
+						</ul>
+					</section>
 				</section>
-
+				
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h2>Openruko - Live demo</h2>
 				</section>
-
+				
+				<section>
+					<h2>Perguntas?</h2>
+					<p><a href="http://twitter.com/nuxlli">@nuxlli</a> - <a href="https://github.com/nuxlli">https://github.com/nuxlli</a></p>
+				</section>
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
