@@ -3,12 +3,13 @@
 }
 
 .slides h2 {
-  color: #ef4b0d;
+  color: #ee6430;
 }
 
 .slides h6, .slides h3 {
   margin-bottom: 1.7em;
-  color: #0ca8e5;
+  color: #49b5df;
+  line-height: 1.50em;
 }
 
 .slides section img {
@@ -23,11 +24,43 @@ p.bad, p.good {
   content: "✓";
   color: #29c40a;
   font-weight: bold;
-  margin-right: 5px;
+  margin-right: 0.4em;
 }
 
 .bad:before {
   content: "✘";
   color: #e10c22;
   font-weight: bold;
+  margin-right: 0.2em;
+}
+
+
+.slides section li {
+  line-height: 1.50em;
+}
+
+.slides section em {
+  font-weight: bold;
+}
+
+.slides section strong {
+  color: #ffffff;
+  font-style: italic;
+  text-shadow: 0 0 0.2em rgba(255, 224, 184, 0.78);
+}
+
+.slides section p {
+  margin-bottom: 1em;
+  line-height: 1.4em;
+}
+
+
+.slides section p.no-margin {
+  margin-bottom: 0;
+}
+
+.slides pre code {
+  padding: 0.5em;
+  font-size: 1.5em;
+  line-height: 1.2em;
 }

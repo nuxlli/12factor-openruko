@@ -144,18 +144,18 @@
 					<section>
 						<h2>12factor - III. Config</h2>
 						<h6>Armazenar configurações no environment</h6>
-						<p class="good">Twelve-factor app usa variáveis de ambiente para armazenar configurações:</p>
+						<p class="good">Twelve-factor apps usam variáveis de ambiente para armazenar configurações:</p>
 						<ul>
 							<li>Fácil de alterar entre ambientes;</li>
-							<li>A poucas chances de ir parar no repositório de código;</li>
-							<li>Não é preciso nenhum sistema adiciona de configuração;</li>
+							<li>A poucas chances das configurações irem parar no codebase;</li>
+							<li>Não é preciso nenhum sistema adicional de configuração;</li>
 						</ul>
 					</section>
 					
 					<section>
 						<h2>12factor - III. Config</h2>
 						<h6>Armazenar configurações no environment</h6>
-						<p class="good">Agnóstico de linguagem e de sistema operacional</p>
+						<p class="good">Agnóstico de linguagem e sistema operacional</p>
 					</section>
 					
 					<section>
@@ -168,8 +168,8 @@
 				<section>
 					<section>
 						<h2>12factor - IV. Backing Services</h2>
-						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
-						<p>Qualquer <em>backing service</em> que seja consumido via rede e seja parte da operação normal do sistema, exemplos:</p>
+						<h6>Tratar <em>backing services</em> como recursos conectados</h6>
+						<p>Qualquer que seja o <em>backing service</em> consumido via rede e faça parte da operação normal do sistema, exemplos:</p>
 						<ul>
 							<li><strong>Datastores:&nbsp;</strong>MySQL ou MongoDB</li>
 							<li><strong>Messaging/Queueing:&nbsp;</strong>RabbitMQ ou Beanstalkd</li>
@@ -180,8 +180,8 @@
 					
 					<section>
 						<h2>12factor - IV. Backing Services</h2>
-						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
-						<p>Mas não somente serviços que em geral são resposabilidade de administrador de sistema, temos também serviços de terceiros:</p>
+						<h6>Tratar <em>backing services</em> como recursos conectados</h6>
+						<p>Mas não somente serviços que em geral são resposabilidade do ops enginner, também fazem parte serviços de terceiros:</p>
 						<ul>
 							<li><strong>SMTP services:&nbsp;</strong>Postmark ou Sendgrid</li>
 							<li><strong>Metrics-gathering services:&nbsp;</strong>New Relic ou Loggly</li>
@@ -192,21 +192,21 @@
 					
 					<section>
 						<h2>12factor - IV. Backing Services</h2>
-						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
-						<p class="good">Não é feita distinção entre serviço locais ou de terceiros</p>
-						<p>Uma vez que o <em>resource</em> seja anexado a aplicação, seu acesso se da por URL ou localizador/credencias adicionados ao <em>config</em>.</p>
+						<h6>Tratar <em>backing services</em> como recursos conectados</h6>
+						<p class="good">Não é feita distinção entre <em>backing services</em> locais ou de terceiros</p>
+						<p>Uma vez que o <em>resource</em> foi anexado a aplicação, seu acesso se da por URL ou localizador/credencias adicionados ao <em>config</em>.</p>
 					</section>
 					
 					<section>
 						<h2>12factor - IV. Backing Services</h2>
-						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
-						<p class="good">Facilita o processo de troca entre versões do <em>resource</em>, sem a necessidade de alteração ou deploy de um novo código</p>
+						<h6>Tratar <em>backing services</em> como recursos conectados</h6>
+						<p class="good">Facilitar o processo de troca entre versões de <em>resources</em>, sem a necessidade de alteração ou deploy de um novo código</p>
 					</section>
 					
 					<section>
 						<h2>12factor - IV. Backing Services</h2>
-						<h6>Tratar <em>backing service</em> como recursos conectados</h6>
-						<p>Cada <em>backing service</em> é um <em>resource</em> diferente. Por exemplo um MySQL é um resource, dois MySQL (usado para redundancia) é qualificado com dois <em>resurces</em> diferentes;</p>
+						<h6>Tratar <em>backing services</em> como recursos conectados</h6>
+						<p>Cada <em>backing service</em> é um <em>resource</em> diferente. Por exemplo um MySQL é um <em>resource</em>, dois MySQLs (usados em redundância) são qualificados como dois <em>resources</em> diferentes;</p>
 						<img src="http://www.12factor.net/images/attached-resources.png" />
 					</section>
 				</section>
@@ -221,7 +221,7 @@
 					<section>
 						<h2>V. Build, release, run</h2>
 						<h6>Separar os estágios de build e execução</h6>
-						<p><strong>Build stage:&nbsp;</strong>É um processo de transformação, que transformo código do respositório em uma versão executável, nesta fase é feita a busca pela versão especificada do código, vendorização das dependencias e compilação de assets.</p>
+						<p><strong>Build stage:&nbsp;</strong>É um processo de transformação, que transforma código do respositório em uma versão executável, nesta fase é feita a busca pela versão especificada do código, vendorização das dependências e compilação de assets.</p>
 					</section>
 					
 					<section>
@@ -233,7 +233,7 @@
 					<section>
 						<h2>V. Build, release, run</h2>
 						<h6>Separar os estágios de build e execução</h6>
-						<p><strong>Run stage:&nbsp;</strong>também conhecido com "runtime", nesta fase o pacote gerado no release é executado no ambiente de execução.</p>
+						<p><strong>Run stage:&nbsp;</strong>também conhecido com <em>runtime</em>, nesta fase o pacote gerado no release é executado no ambiente de execução.</p>
 					</section>
 					
 					<section>
@@ -245,14 +245,14 @@
 					<section>
 						<h2>V. Build, release, run</h2>
 						<h6>Separar os estágios de build e execução</h6>
-						<p>Twelve-factor definir uma separação estrita entre as fases: build, release e run. Por exemplo: não é possível alterar o código da aplicação na fase de <em>runtime</em>.</p>
+						<p>Twelve-factor define uma separação estrita entre as fases: build, release e run. Por exemplo: não é possível alterar o código da aplicação na fase de <em>runtime</em>.</p>
 					</section>
 										
 					<section>
 						<h2>V. Build, release, run</h2>
 						<h6>Separar os estágios de build e execução</h6>
 						<ul>
-							<li>O processo de build é disparado pela ferramenta de deploy, que deve ser capaz de dentre outras coisas executar processo de rollback e atualização do código</li>
+							<li>O processo de build é disparado pela ferramenta de deploy, que deve ser capaz de, dentre outras coisas, executar processo de rollback e atualização do código</li>
 							<li>Cada <em>release</em> deve ter um ID único, e uma vez criada não pode ser modificada;</li>
 							<li>A fase de build tende a ser a fase mais complexa, em geral é onde as falhas acontecem e são reportadas ao desenvolvedor imediatamente</li>
 						</ul>
@@ -299,7 +299,7 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>12factor - VII. Port binding</h2>
 						<h6>Exportar serviços via <em>port binding</em></h6>
-						<p>Nenhum webserver é injetado no environment de execução, as aplicações devem ser auto-contidas, elas devem export o serviço http dando binding em uma porta e aguardar por requests nesta porta.</p>
+						<p>Nenhum webserver é injetado no environment de execução, as aplicações devem ser auto-contidas, elas devem expor o serviço http dando binding em uma porta e aguardar por requests nesta porta.</p>
 					</section>
 					
 					<section>
@@ -311,7 +311,7 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>12factor - VII. Port binding</h2>
 						<h6>Exportar serviços via <em>port binding</em></h6>
-						<p>Observer que um serviço assim exposto pode ser tornar um <em>backing service</em> para outras aplicações</p>
+						<p>Observe que um serviço assim exposto pode ser tornar um <em>backing service</em> para outras aplicações</p>
 					</section>
 				</section>
 
@@ -339,13 +339,13 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>12factor - IX. Disposability</h2>
 						<h6>Maximizar a robustez com <em>fast startup</em> e <em>graceful shutdown</em></h6>
-						<p>Ter <em>fast startup</em> agiliza o processo de execução da aplicação, tornando rápidamente disponível, e torna mais fácil o processo de mudar uma aplicação de máquina física.</p>
+						<p>Ter <em>fast startup</em> agiliza o processo de execução da aplicação, tornando a rápidamente disponível e  facilita o processo de mover a aplicação de máquina "física".</p>
 					</section>
 
 					<section>
 						<h2>12factor - IX. Disposability</h2>
 						<h6>Maximizar a robustez com <em>fast startup</em> e <em>graceful shutdown</em></h6>
-						<p>O processo de <em>graceful shutdown</em> deve ocorrer normalmente quando o processo recebe um SIGTERM. Para processos http por exemplo, ele deve parar de esperar por nova requisições, finalizar as requisições atuais, fechar todos os streams em andamento, e finalizar o processo</p>
+						<p>O processo de <em>graceful shutdown</em> deve ocorrer normalmente quando o processo recebe um SIGTERM. Para processos http por exemplo, ele deve parar de esperar por novas requisições, finalizar as requisições atuais, fechar todos os streams em andamento e finalizar o processo</p>
 					</section>
 				</section>
 
@@ -366,11 +366,16 @@ worker: resque work --queues=high,low
 							<li><strong>Gap de ferramentas:&nbsp;</strong>Desenvolve localmente com Nginx, SQLite sobre OS X, e coloca em produção sobre: Apache, MySQL e Linux;</li>
 						</ul>
 					</section>
+
+					<section>
+						<h2>12factor - X. Dev/prod parity</h2>
+						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
+						<p>Twelve-factor apps são desenhadas para facilitar o processo de <em>continuous deployment</em> o que ajuda a tornar o gap entre desenvolvimento e produção muito menor.</p>
+					</section>
 					
 					<section>
 						<h2>12factor - X. Dev/prod parity</h2>
 						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
-						<p>Twelve-factor apps são desenhas para facilitar o processo de <em>continuous deployment</em> o que ajuda a tornar o gap entre desenvolvimento e produção muito menor.</p>
 						<p>Como os gaps são evitados:</p>
 						<ul>
 							<li><strong>Gap de time:&nbsp;</strong>Após desenvolver um código o dev pode fazer o deploy depois de algumas horas ou mesmo minutos;</li>
@@ -382,8 +387,8 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>12factor - X. Dev/prod parity</h2>
 						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
-						<p class="bad">Divergências entre os <em>baking services</em> talvez sejam um dos principais pivos de problemas, e um dos mais complicados de manter.</p>
-						<p class="good">Porem o desenvolvedor twelve-factor resiste ao máximo usar diferentes <em>backing service</em> entre os environments</p>
+						<p class="bad">Divergências entre <em>backing services</em> talvez sejam um dos principais pivos de problemas, e um dos mais complicados de resolver.</p>
+						<p class="good">Porém o desenvolvedor twelve-factor resiste ao máximo utilizar diferentes <em>backing services</em> para a mesma função entre os environments</p>
 					</section>
 				</section>
 				
@@ -391,21 +396,21 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>12factor - XI. Logs</h2>
 						<h6>Trate logs como stream</h6>
-						<p>Logs são uma parte muito importe de uma aplicação, porém é comum o redirecionamento e amazenamento dos mesmos em arquivos;</p>
-						<p class="bad">Isso não deve acontecer, assim como no ambiente de desenvolvimento logs devem gerar um stream na saída padrão, e o Desenvolvedor twelve-factor não se preocupa em encaminhar ou armazenar esses fluxos;</p>
+						<p>Logs são uma parte muito importe de uma aplicação, porém é comum o redirecionamento e amazenamento dos mesmos em arquivos.</p>
+						<p class="bad">Isso não deve acontecer, assim como no ambiente de desenvolvimento, em geral, logs são visualizados na forma de stream na saída padrão, o desenvolvedor twelve-factor não se preocupa em encaminhar ou armazenar este stream.</p>
 					</section>
 					
 					<section>
 						<h2>12factor - XI. Logs</h2>
 						<h6>Trate logs como stream</h6>
-						<p class="good">Mas como logs são importes, o sistema de execução deve se preocupar em capturar e encaminhar o log para algum serviço que o desenvolvedor possa consultar depois.</p>
-						<p>Esse processo deve impactor o menos possível no tempo de processamento e comunicação da máquina onde a aplicação esta sendo executada</p>
+						<p class="good">Porém como logs são importantes, o sistema de execução deve se preocupar em capturar e encaminhar os logs para algum serviço que o desenvolvedor possa consultar depois.</p>
+						<p>Esse processo deve ser o menos impactante possível, seja em processamento e comunicação da máquina onde a aplicação esta sendo executada</p>
 					</section>
 					
 					<section>
 						<h2>12factor - XI. Logs</h2>
 						<h6>Trate logs como stream</h6>
-						<p><em>Backing services</em> para analise dos logs e geração de metricas podem ser adicionados para completar o processo;</p>
+						<p><em>Backing services</em> para análise dos logs e geração de métricas podem ser adicionados para completar o processo.</p>
 					</section>
 				</section>
 
@@ -424,7 +429,7 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>12factor - XII. Admin process</h2>
 						<h6>Tarefas de administração e manutenção devem ser <em>on-off processes</em></h6>
-						<p>Para estes casos o desenvolvedor deve poder executar estas tarefas nas mesmas condições dos environments de execução da aplicação, incluindo rodar no mesmo <em>release</em> com as mesmas <em>configs</em></p>
+						<p>Para estes casos o desenvolvedor deve ser capaz de executar estas tarefas nas mesmas condições dos environments de execução da aplicação, incluindo rodar no mesmo <em>release</em> com as mesmas <em>configs</em> e protegido por <em>dependency isolation</em></p>
 					</section>
 				</section>
 
@@ -471,10 +476,10 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>Openruko - Arquitetura</h2>
 						<h6>Dynohost - <a href="https://github.com/openruko/dynohost">openruko/dynohost</a></h6>
-						<p>Serviço desenvolvido em node.js + LXC, seu trabalho se divide em quatro partes:</p>
+						<p class="no-margin">Serviço desenvolvido em node.js + LXC, seu trabalho se divide em quatro partes:</p>
 						<ul>
 							<li><strong>Container constructor: </strong>Através de scripts bash constroi os arquivos de configuração e ponto de montagem / do container</li>
-							<li><strong>LXC Wraper: </strong>Uma vez com arquivos de configuração e o ponto de montagem, gerenciar a execução dos containers LXC;</li>
+							<li><strong>LXC Wrapper: </strong>Uma vez com arquivos de configuração e o ponto de montagem estabelecido, gerencia a execução dos containers LXC;</li>
 							<li><strong>Deploy: </strong>Antes de executar um container baixa o slug a ser executado e monta este na pasta /app, e por fim starta o container para execução do rukorun</li>
 							<li><strong>Dyno gestor: </strong>Constroi um canal de comunicação com o container (dyno) por meio de sockets;</li>
 						</ul>
@@ -483,8 +488,8 @@ worker: resque work --queues=high,low
 					<section>
 						<h2>Openruko - Arquitetura</h2>
 						<h6>Rukorun - <a href="https://github.com/openruko/rukorun">openruko/rukorun</a></h6>
-						<p>Feito em node.js, esse é um simples script que faz a ponte do container com o mundo, através de sockts estabelecidos pelo Dynohost</p>
-						<p>É atráves desse script que aplicação e inicializada pelo dynohost, e mesmo coisas como console podem ser estabelecidas com o container</p>
+						<p>Feito em node.js, esse é um simples script que faz a ponte do container com o mundo, através de sockets estabelecidos pelo Dynohost</p>
+						<p>É atráves deste script que aplicação e inicializada pelo dynohost, ou mesmo coisas como um console podem ser estabelecidas com o container</p>
 					</section>
 					
 					<section>
