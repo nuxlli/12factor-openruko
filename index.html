@@ -147,7 +147,7 @@
 						<p class="good">Twelve-factor apps usam variáveis de ambiente para armazenar configurações:</p>
 						<ul>
 							<li>Fácil de alterar entre ambientes;</li>
-							<li>A poucas chances das configurações irem parar no codebase;</li>
+							<li>Há poucas chances das configurações irem parar no codebase;</li>
 							<li>Não é preciso nenhum sistema adicional de configuração;</li>
 						</ul>
 					</section>
@@ -389,6 +389,19 @@ worker: resque work --queues=high,low
 						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
 						<p class="bad">Divergências entre <em>backing services</em> talvez sejam um dos principais pivos de problemas, e um dos mais complicados de resolver.</p>
 						<p class="good">Porém o desenvolvedor twelve-factor resiste ao máximo utilizar diferentes <em>backing services</em> para a mesma função entre os environments</p>
+					</section>
+					
+					<section>
+						<h2>12factor - X. Dev/prod parity</h2>
+						<h6>Procure tornar os ambientes de development, staging e production o mais similar possível</h6>
+						<p>Utilize ferramentas de isolamento e provisionamento:</p>
+						<ul>
+							<li><a href="http://www.vagrantup.com">http://www.vagrantup.com</a></li>
+							<li><a href="http://www.docker.io/">http://www.docker.io/</a></li>
+							<li><a href="https://github.com/nuxlli/macbox">https://github.com/nuxlli/macbox</a></li>
+							<li><a href="http://www.opscode.com/chef/">http://www.opscode.com/chef/</a></li>
+							<li><a href="https://puppetlabs.com/">https://puppetlabs.com</a></li>
+						</ul>
 					</section>
 				</section>
 				
